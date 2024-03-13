@@ -1,8 +1,6 @@
 package knuckles.untitled.Config;
 
 import net.minecraftforge.common.ForgeConfigSpec;
-import org.apache.commons.lang3.tuple.Pair;
-
 public final class ConfigClass {
 
     public static final ForgeConfigSpec.Builder builder = new ForgeConfigSpec.Builder();
@@ -13,6 +11,8 @@ public final class ConfigClass {
     public static final ForgeConfigSpec.ConfigValue<Boolean> amuletCoinMutiplyer;
     public static final ForgeConfigSpec.ConfigValue<Double> amuletCoinMutiplyerValue;
     public static final ForgeConfigSpec.ConfigValue<Boolean> doDamageToAmulet;
+
+    public static final ForgeConfigSpec.ConfigValue<Integer> amountOfDamageToAmulet;
 
 
 
@@ -44,9 +44,11 @@ public final class ConfigClass {
         doDamageToAmulet = builder
                 .comment("Will the amulet get damage each time its use ? (NOT IMPLEMENTED)")
                 .define("amuletCoinDamage", Boolean.valueOf("true"));
+        amountOfDamageToAmulet = builder
+                .comment("The amount of damage the amulet will get after being used")
+                .define("amuletCoinDAMAGE",1);
 
-
-        bossTierCommonMP = builderCoin.comment("multiply the coin from boss common by:").define("commonCoin",1.2);
+        bossTierCommonMP = builderCoin.comment("multiply the coin from boss common by:").define("commonCoin",1.1);
         bossTierUncommonMP = builderCoin.comment("multiply the coin from boss:").define("uncommonCoin",1.3);
         bossTierRareMP = builderCoin.comment("multiply the coin from boss:").define("rareCoin",1.4);
         bossTierEpicMP = builderCoin.comment("multiply the coin from boss:").define("epicCoin",1.5);
